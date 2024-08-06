@@ -1,0 +1,9 @@
+<div class="container-fluid d-flex flex-column align-items-center">
+  <h1>Doctors Public Page</h1>
+  <h2> Hello Doctor <%= current_doctor.full_name%>!</h2>  
+  <p class="text-xl-center">A warm welcome to the office! <br>Vizit your profile to view a list of your patients <br> and provide them prescriptions:</p>      
+   
+    <div class="mb-2">
+    <%= link_to "Enter Your Profile", doctor_path(@doctor), class: "btn btn-success text-white" %>
+  </div>  
+</div> 

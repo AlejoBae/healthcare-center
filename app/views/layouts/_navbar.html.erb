@@ -1,0 +1,12 @@
+
+<nav class="inline-flex justify-between items-center">
+  <% if user_signed_in? %>
+     <div class="">
+    <%= button_to "Signout", destroy_user_session_path, 'method': :delete, class: 'pure-button rounded-2 my-2' %>
+  </div>
+    <% elsif doctor_signed_in? %>
+<div class="">
+  <%= button_to "Signout", destroy_doctor_session_path, 'method': :delete, class: 'pure-button rounded-2 my-2' %>     
+</div> 
+    <% end %>     
+</nav>

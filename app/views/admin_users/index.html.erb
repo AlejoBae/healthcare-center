@@ -1,0 +1,8 @@
+<div class="container-fluid d-flex flex-column align-items-center">
+  <h1> Goodby Mister <%= current_admin_user.full_name%>!</h1>  
+  <h5 class="text-xl-center text-danger"> For return login after signout </h5>  
+  <p><mark><strong>Leaving click below:</strong></mark></p>
+  <div class="mb-2">
+    <%= button_to "Signout", destroy_admin_user_session_path, 'method': :delete, class: "btn btn-primary text-white" %>     
+  </div>
+</div>

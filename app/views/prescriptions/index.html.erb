@@ -1,0 +1,24 @@
+<%= link_to doctor_path(@user.id), class: "btn btn-link" do %>
+  <p class="link-black text-center"><strong>back to profile</strong></p>
+<% end %>
+<h1>All Prescriptions</h1>
+
+<% if @appointments.blank? %>
+  <h4>There are not prescriptions yet</h4>
+<% else %>
+  <div class="d-flex gap-3 flex-wrap mt-5">
+    <% @appointments.each do |a| %>
+      <div class="card p-2">
+        <div class="card-body">
+          <% if a.prescription.blank? %>
+            <%= ' ' %>
+          <% else %>
+            <p>Prescription for: <strong><%= a.user.full_name  %></strong></p>
+            <p><%= a.prescription.prescript %></p>
+          <%end%>
+        </div>
+      </div>
+    <%end%>
+  <%end%>
+</div>
+

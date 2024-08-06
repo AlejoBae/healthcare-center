@@ -1,0 +1,25 @@
+<div class="mx-auto md:w-2/3 w-50 px-6 py-3">
+  <h2 class="font-bold text-4xl mb-6">Log in</h2>
+
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="form-inputs">
+    <div class="field">
+      <%= f.label :phone, class: "mb-2" %><br />
+      <%= f.text_field :phone, autofocus: true, 
+    placeholder: "Phone",
+    class: "rounded-md" %>
+    </div>
+    <%= f.input :password,
+                required: false,
+                input_html: { autocomplete: "current-password" },
+                 placeholder: "Password" %>
+    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Log in", class: "mb-6 rounded-lg py-2 px-5 mt-3 bg-primary text-white block font-medium cursor-pointer" %>
+  </div>
+<% end %>
+
+<p class=""><%= render "doctors/shared/links" %></p>
+</div>

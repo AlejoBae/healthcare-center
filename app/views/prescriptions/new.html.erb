@@ -1,0 +1,17 @@
+<%= link_to doctor_path(@user.id), class: "btn btn-link" do %>
+    <p class="link-black text-center"><strong>back</strong></p>
+<% end %>
+
+
+<section>
+  <h1 class="text-center">Add a new prescription</h1>
+    
+  <%= form_with model: @prescription, url: prescriptions_path, class: "card left" do |form| %>    
+      <p class="m-2 p-1">Write your prescript for patient: <strong><%= @appointment.user.full_name %></strong></p>        
+      <%= form.hidden_field :appointment_id,  value: @appointment.id%>  <br>  
+      
+      <%= form.label :prescript, class: "m-1" %> <br>
+      <%= form.text_area :prescript , cols: 30, rows: 10 %> <br>
+      <%= form.submit "Submit", class: 'pure-button button-secondary mb-2' %>    
+  <% end %>  
+</section>

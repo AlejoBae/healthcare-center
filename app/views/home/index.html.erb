@@ -1,0 +1,27 @@
+<div class="container-fluid d-flex flex-column align-items-center bg-secondary p-3">
+
+   <div class="header">
+     <h1 class="text-center display-2">Healthcare Center</h1>
+   </div>
+
+  <div class="content">
+    <h2 class="text-center display-4 text-warning">Welcome to our Healthcare Center application</h1>
+    <p class="text-even fs-5 text-white">The purpose of this application is to provide interaction between doctors and patients. In particular, the patient can register, enter the public page, go to his profile, select the specialist he wants to contact and make an appointment. In turn, the doctor with whom the patient made an appointment can enter his profile through the public page and leave his recommendations online to the patient, after which the appointment is considered closed. General management is carried out by the administrator.</p>
+    <div class="content-subhead">
+      <p class="m-2 text-start fs-5 text-white">You can enter the application by following the links below:</p>
+      <div class="container-fluid d-flex justify-content-center p-3">  
+        <p class="m-2 p-1 fw-bold">For doctors:</p>
+        <%= link_to "Doctor Signin", new_doctor_session_path, class: "btn btn-success text-light fw-bold" %>
+        <p class="m-2 p-1 fw-bold">For patients:</p>
+        <%= link_to "Patient Signin", new_user_session_path, class: "btn btn-primary text-light fw-bold" %>
+        <p class="m-2 p-1 fw-bold">For admins:</p>
+        <%= link_to "Admin Signin", new_admin_user_session_path, class: "btn btn-warning text-light fw-bold" %>  
+      </div>
+    </div>
+
+    <div class="content-subhead">
+      <p class="m-2 text-start fs-5 text-warning">Patients can register here:</p>     
+      <%= link_to "Patient Signup",  new_user_registration_path, class: "btn btn-danger text-light fw-bold" %>   
+    </div>  
+    </div>  
+</div> 

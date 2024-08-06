@@ -1,0 +1,36 @@
+<%= link_to prescriptions_path, class: "link-primary" do %>
+    <h4 class="link-black text-center"><strong>All Prescriptions</strong></h4>
+<% end %>
+
+<h1 class="text-center">Doctor's Profile</h1>
+<h4 class="text-center">Dear doctor <strong><%= current_doctor.full_name%></strong>, please,<br> serve opened appointments</h4>
+
+<% if @appointments.blank? %>
+  <div class="bg-secondary p-2 rounded">
+    <h4 class="text-white">You don't have any appointmnent yet</h4>
+  </div>  
+<% else%>
+  <div class="d-flex gap-3 flex-wrap mt-5">
+    <% @appointments.each do |a| %>
+      <% if a.prescription %>
+        <div class="card p-2">
+          <div class="card-body">
+            <%= link_to prescription_path(a.prescription.id), class: "link-success p-2" do %>
+              <p class="text-center px-5 mx-1"><strong>Written prescript</strong></p>
+            <% end %>
+        <p>Appointment Status: <strong class="text-danger">Closed</strong></p>       
+      <% else %>
+        <div class="card p-2">
+          <div class="card-body">
+            <%= link_to new_prescription_path(appointment_id: a.id), class: "link-danger p-2" do %>
+              <p class="text-center px-5 mx-1"><strong>Write a prescript</strong></p>
+            <% end %>
+            <p>Appointment Status: <strong class="text-primary">Opened</strong></p> 
+      <% end %>
+        <p>Patient name: <strong><%= a.user.full_name %></strong></p>
+        <p>Appointment Date <strong><%= a.appointment_date.to_s(:custom_datetime) %></strong></p>
+          </div>
+        </div>        
+      <% end %>
+    <% end %>
+  </div>

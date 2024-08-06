@@ -1,0 +1,24 @@
+<h1 class="text-center">Patient's Profile</h1>
+<h2> Dear <%= current_user.full_name%>!</h2>
+<p class="text-even">Here you can choose a specialist, appoint a meeting with him and get his recommendations, <br> also go to the page where all the recommendations given by doctors are presented.</p>
+<%= link_to appointments_path, class: "link-primary" do %>
+  <h4 class="text-center"><strong>My Appointments</strong></h4>
+<% end %>
+
+<h3 class="text-center">Select your doctor</h3>
+
+<div class="d-flex gap-3 flex-wrap mt-5">
+  <% @display_doctors.each do |doc| %>
+  <div class="card p-2">
+    <div class="card-body">
+  <%= link_to new_appointment_path(doctor_id: doc.id), class: "link-success p-2" do %>
+            <p class="link-black text-center px-5 mx-1"><strong>Arrange an appointment</strong></p>
+            <a><%= cl_image_tag(doc.attachment.key, :type => :upload, :width => 170, :height => 180, class: 'rounded-circle shadow-lg d-block mx-auto') %></a>
+            <h5 class="m-1 p-0">Doctor: <strong><%= doc.full_name %></strong></h5>
+            <h5 class="m-1 p-0">Category: <strong><%= doc.category.name %></strong></h5>
+            <h5 class="mt-1 p-0">Appointments(<strong><%= doc.appointments.count %></strong>)</h5>
+          </div>
+        </div>
+    <% end %>
+  <% end %>
+</div>

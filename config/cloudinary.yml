@@ -1,0 +1,14 @@
+development: 
+  cloud_name: "duawewfvx"
+  api_key: "763744376637225"
+  api_secret: "eyyK2NPv4szxAoJ6lDrInEDdoxY"
+  static_file_support: true
+  secure: true
+
+production:
+  cloud_name: "duawewfvx"
+  api_key: "763744376637225"
+  api_secret: "eyyK2NPv4szxAoJ6lDrInEDdoxY"
+  static_file_support: true
+  secure: true
+  

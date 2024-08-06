@@ -1,0 +1,11 @@
+<div class="container-fluid d-flex flex-column align-items-center bg-light">
+
+<h1>Patients Public Page</h1>
+ 
+  <h2> Hello Dear <%= current_user.full_name%>!</h2> 
+  <p class="text-xl-center">Our medical center offers a full range of services for recovery and maintaining your health. <br>To view a list of our specialists and make an appointment, just go to your personal profile:</p>      
+  
+  <div class="mb-2">
+    <%= link_to "Enter Your Profile", user_path(@user), class: "btn btn-success text-white" %>
+  </div>   
+</div>  
